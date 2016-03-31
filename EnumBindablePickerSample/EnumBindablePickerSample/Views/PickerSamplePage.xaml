@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:EnumBindablePickerSample.Controls;assembly=EnumBindablePickerSample"
+             xmlns:enums="clr-namespace:EnumBindablePickerSample.Enumerations;assembly=EnumBindablePickerSample"
+             x:Class="EnumBindablePickerSample.Views.PickerSamplePage"
+             Title="Sample Page">
+
+  <StackLayout>
+    <controls:EnumBindablePicker x:TypeArguments="enums:SampleEnum" SelectedItem="{Binding SelectedEnum}"></controls:EnumBindablePicker>
+    <Label Text="{Binding SelectedEnum}"></Label>
+    <controls:EnumBindablePicker x:TypeArguments="enums:SampleEnumWithDescription" SelectedItem="{Binding SelectedEnumWithDescription}"></controls:EnumBindablePicker>
+    <Label Text="{Binding SelectedEnumWithDescription}"></Label>
+    <controls:EnumBindablePicker x:TypeArguments="enums:SampleEnumLocalized" SelectedItem="{Binding SelectedEnumLocalized}"></controls:EnumBindablePicker>
+    <Label Text="{Binding SelectedEnumLocalized}"></Label>
+  </StackLayout>
+</ContentPage>
