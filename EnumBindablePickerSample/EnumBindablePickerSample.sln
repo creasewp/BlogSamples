@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumBindablePickerSample.Droid", "EnumBindablePickerSample.Droid\EnumBindablePickerSample.Droid.csproj", "{C568F8CC-CA45-4C87-B769-A1003EF20D91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumBindablePickerSample", "EnumBindablePickerSample\EnumBindablePickerSample.csproj", "{9E4A5473-F287-43A4-97CA-5790B5D1CC96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumBindablePickerSample", "EnumBindablePickerSample\EnumBindablePickerSample.csproj", "{F948024C-C234-4E99-A8B0-6D6761D1F7CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumBindablePickerSample.Droid", "EnumBindablePickerSample.Droid\EnumBindablePickerSample.Droid.csproj", "{C9964F20-2AD1-43BE-8C2A-807040246776}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C568F8CC-CA45-4C87-B769-A1003EF20D91}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{F948024C-C234-4E99-A8B0-6D6761D1F7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F948024C-C234-4E99-A8B0-6D6761D1F7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F948024C-C234-4E99-A8B0-6D6761D1F7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F948024C-C234-4E99-A8B0-6D6761D1F7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E4A5473-F287-43A4-97CA-5790B5D1CC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4A5473-F287-43A4-97CA-5790B5D1CC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4A5473-F287-43A4-97CA-5790B5D1CC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4A5473-F287-43A4-97CA-5790B5D1CC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9964F20-2AD1-43BE-8C2A-807040246776}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C0B310C-7DB9-4A07-8301-7EF7CCDC7054}
 	EndGlobalSection
 EndGlobal
