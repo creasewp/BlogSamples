@@ -1,5 +1,5 @@
-﻿using EnumBindablePickerSample.Enumerations;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using EnumBindablePickerSample.Enums;
 
 namespace EnumBindablePickerSample.ViewModels
 {
@@ -16,38 +16,35 @@ namespace EnumBindablePickerSample.ViewModels
         }
 
 
-        private SampleEnum selectedEnum;
+        private SampleEnum _selectedEnum;
         public SampleEnum SelectedEnum
         {
-            get { return selectedEnum; }
+            get => _selectedEnum;
             set {
-                selectedEnum = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("SelectedEnum"));  }
-        }
-
-        private SampleEnumWithDescription selectedEnumWithDescription;
-        public SampleEnumWithDescription SelectedEnumWithDescription
-        {
-            get { return selectedEnumWithDescription; }
-            set {
-                selectedEnumWithDescription = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("SelectedEnumWithDescription")); }
-        }
-
-        private SampleEnumLocalized selectedEnumLocalized;
-        public SampleEnumLocalized SelectedEnumLocalized
-        {
-            get { return selectedEnumLocalized; }
-            set
-            {
-                selectedEnumLocalized = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("SelectedEnumLocalized"));
+                _selectedEnum = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedEnum"));
             }
         }
 
+        private SampleEnumWithDescription _selectedEnumWithDescription;
+        public SampleEnumWithDescription SelectedEnumWithDescription
+        {
+            get => _selectedEnumWithDescription;
+            set {
+                _selectedEnumWithDescription = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedEnumWithDescription"));
+            }
+        }
 
+        private SampleEnumLocalized _selectedEnumLocalized;
+        public SampleEnumLocalized SelectedEnumLocalized
+        {
+            get => _selectedEnumLocalized;
+            set
+            {
+                _selectedEnumLocalized = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedEnumLocalized"));
+            }
+        }
     }
 }

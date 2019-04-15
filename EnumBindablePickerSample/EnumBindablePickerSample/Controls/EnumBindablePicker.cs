@@ -28,18 +28,12 @@ namespace EnumBindablePickerSample.Controls
             OnSelectedItemChanged(this, SelectedItem, SelectedItem);
         }
 
-        public static BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(T), typeof(EnumBindablePicker<T>), default(T), propertyChanged: OnSelectedItemChanged, defaultBindingMode: BindingMode.TwoWay);
+        public new static BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(T), typeof(EnumBindablePicker<T>), default(T), propertyChanged: OnSelectedItemChanged, defaultBindingMode: BindingMode.TwoWay);
 
-        public T SelectedItem
+        public new T SelectedItem
         {
-            get
-            {
-                return (T)GetValue(SelectedItemProperty);
-            }
-            set
-            {
-                SetValue(SelectedItemProperty, value);
-            }
+            get => (T)GetValue(SelectedItemProperty);
+            set => SetValue(SelectedItemProperty, value);
         }
         private void OnSelectedIndexChanged(object sender, EventArgs eventArgs)
         {
@@ -50,8 +44,7 @@ namespace EnumBindablePickerSample.Controls
             else
             {
                 //try parsing, if using description this will fail
-                T match;
-                if (!Enum.TryParse<T>(Items[SelectedIndex], out match))
+                if (!Enum.TryParse<T>(Items[SelectedIndex], out var match))
                 {
                     //find enum by Description
                     match = GetEnumByDescription(Items[SelectedIndex]);
@@ -61,8 +54,7 @@ namespace EnumBindablePickerSample.Controls
         }
         private static void OnSelectedItemChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
-            var picker = bindable as EnumBindablePicker<T>;
-            if (newvalue != null)
+            if (newvalue != null && bindable is EnumBindablePicker<T> picker)
             {
                 picker.SelectedIndex = picker.Items.IndexOf(GetEnumDescription(newvalue));
             }
@@ -85,7 +77,7 @@ namespace EnumBindablePickerSample.Controls
             return result;
         }
 
-        private T GetEnumByDescription(string description)
+        private static T GetEnumByDescription(string description)
         {
             return Enum.GetValues(typeof(T)).Cast<T>().FirstOrDefault(x => string.Equals(GetEnumDescription(x), description));
         }

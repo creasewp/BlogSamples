@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EnumBindablePickerSample.Enumerations
+namespace EnumBindablePickerSample.Enums
 {
     public enum SampleEnumWithDescription
     {
