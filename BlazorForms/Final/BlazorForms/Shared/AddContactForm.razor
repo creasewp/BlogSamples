@@ -1,0 +1,90 @@
+﻿@using BlazorForms.Data;
+
+<div class="container-sm">
+    <div class="row">
+        <div class="col">
+            <h2>Create Contact</h2>
+            <EditForm Model="editingContact" OnValidSubmit="SubmitForm" class="mb-5">
+                <DataAnnotationsValidator />
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="first-name" class="form-label">First name</label>
+                        <InputText @bind-Value="editingContact.FirstName" class="form-control" id="first-name"/>
+                        <ValidationMessage For="@(() => editingContact.FirstName)" />
+                    </div>
+
+                    <div class="col">
+                        <label for="last-name" class="form-label">Last name</label>
+                        <InputText @bind-Value="editingContact.LastName" class="form-control" id="last-name" />
+                        <ValidationMessage For="@(() => editingContact.LastName)" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="phone-number" class="form-label">Phone Number</label>
+                        <InputText @bind-Value="editingContact.PhoneNumber" class="form-control" id="phone-number" />
+                        <ValidationMessage For="@(() => editingContact.PhoneNumber)" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="email" class="form-label">Email</label>
+                        <InputText @bind-Value="editingContact.Email" class="form-control" id="email" />
+                        <ValidationMessage For="@(() => editingContact.Email)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary">Add Contact</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Contact List</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Emails</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var contact in Contacts)
+                    {
+                        <tr>
+                            <td>@contact.FirstName</td>
+                            <td>@contact.LastName</td>
+                            <td>@contact.PhoneNumber</td>
+                            <td>@contact.Email</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    public Contact editingContact = new Contact();
+    public List<Contact> Contacts { get; set; } = new List<Contact>();
+
+    public void SubmitForm()
+    {
+        Contacts.Add(editingContact);
+        resetForm();
+    }
+
+    public void resetForm() => editingContact = new Contact();
+}
